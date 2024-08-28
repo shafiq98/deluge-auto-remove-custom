@@ -20,7 +20,6 @@ def find_files_without_hardlink():
     list_of_files_without_hardlink = []
 
     target_path = "./"
-    # target_path = r"\\192.168.0.120\nas\Media\DelugeDownloads\complete"
     file_list = [f for f in os.listdir(target_path) if os.path.isfile(os.path.join(target_path, f))]
 
     for file in file_list:
