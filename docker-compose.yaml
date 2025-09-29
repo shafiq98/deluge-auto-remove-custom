@@ -1,0 +1,21 @@
+version: '3.8'
+
+services:
+  deluge-hardlink-manager:
+    image: shafiq98/deluge-hardlink-manager:0.1
+    environment:
+      - DELUGE_HOST=${DELUGE_HOST}
+      - DELUGE_RPC_USERNAME=${DELUGE_RPC_USERNAME}
+      - DELUGE_RPC_PASSWORD=${DELUGE_RPC_PASSWORD}
+    env_file:
+      - .env
+    volumes:
+      - ${BASE_DOCKER_DATA_PATH}/deluge-hardlink-manager/config:/config
+      - /mnt/user/NAS/Media/DelugeDownloads/complete:/data
+    
+volumes:
+  data:
+    driver_opts:
+      type: cifs
+      o: username=${USERNAME},password=${PASSWORD},uid=1000,gid=1000
+      device: "${DOCKER_MOUNT_PATH}"
