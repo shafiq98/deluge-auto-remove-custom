@@ -1,0 +1,16 @@
+name: Debug Workflow Trigger
+
+on:
+  push:
+    branches: ['main']
+
+jobs:
+  debug-job:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Print GitHub context
+        run: |
+          echo "✅ Workflow triggered!"
+          echo "Branch ref: $GITHUB_REF"
+          echo "Commit SHA: $GITHUB_SHA"
+          echo "Actor: $GITHUB_ACTOR"
