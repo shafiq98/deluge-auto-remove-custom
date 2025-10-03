@@ -190,7 +190,7 @@ if __name__ == "__main__":
     backoff_period_seconds: int = 1 * 60 * 60  # 1 hour in seconds
     while True:
         now: datetime.datetime = datetime.datetime.now()
-        last_run_seconds_ago = datetime.timedelta(now - last_run_time).seconds
+        last_run_seconds_ago = (now - last_run_time).seconds
         if last_run_seconds_ago > backoff_period_seconds:
             log.info("Cleaning up Deluge downloads now...")
             torrents_not_deleted: list[str] = execute_deluge_agent()
