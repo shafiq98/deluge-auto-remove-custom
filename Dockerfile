@@ -8,7 +8,8 @@ WORKDIR /app
 COPY . /app
 
 # Install any needed packages specified in requirements.txt
-RUN pip install --no-cache-dir -r requirements.txt
+RUN pip install --no-cache-dir uv
+RUN uv sync --pre
 
 # Run the command on container startup
 CMD ["python -m main"]
