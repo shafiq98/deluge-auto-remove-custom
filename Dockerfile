@@ -9,7 +9,7 @@ COPY . /app
 
 # Install any needed packages specified in requirements.txt
 RUN pip install --no-cache-dir uv
-RUN uv pip install .
+RUN uv pip install --system .
 
 # Run the command on container startup
 CMD ["python", "main.py"]
