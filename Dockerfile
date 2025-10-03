@@ -9,7 +9,7 @@ COPY . /app
 
 # Install any needed packages specified in requirements.txt
 RUN pip install --no-cache-dir uv
-RUN uv sync --pre
+RUN uv pip install .
 
 # Run the command on container startup
-CMD ["python -m main"]
+CMD ["python", "main.py"]
