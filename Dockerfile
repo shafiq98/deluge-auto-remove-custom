@@ -12,4 +12,4 @@ RUN pip install --no-cache-dir uv
 RUN uv sync --pre
 
 # Run the command on container startup
-CMD ["python -m main"]
+CMD ["python", "-m", "main"]
