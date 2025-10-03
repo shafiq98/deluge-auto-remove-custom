@@ -2,7 +2,7 @@ version: '3.8'
 
 services:
   deluge-hardlink-manager:
-    image: shafiq98/deluge-hardlink-manager:0.2
+    image: ghcr.io/shafiq98/deluge-auto-remove-custom@latest
     environment:
       - DELUGE_HOST=${DELUGE_HOST}
       - DELUGE_RPC_USERNAME=${DELUGE_RPC_USERNAME}

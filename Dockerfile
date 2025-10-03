@@ -11,4 +11,4 @@ COPY . /app
 RUN pip install --no-cache-dir -r requirements.txt
 
 # Run the command on container startup
-CMD cron && tail -f /var/log/cron.log
+CMD ["python -m main"]
