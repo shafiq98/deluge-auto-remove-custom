@@ -197,4 +197,5 @@ if __name__ == "__main__":
             log.info(f"Could not delete the following torrents: {torrents_not_deleted}")
             last_run_time = now
         else:
+            log.info(f"Sleeping for the next {backoff_period_seconds} seconds")
             time.sleep(backoff_period_seconds)
